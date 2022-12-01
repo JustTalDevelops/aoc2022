@@ -17,21 +17,20 @@ func main() {
 	scanner := bufio.NewScanner(f)
 
 	var (
-		sum  int
-		sums []int
+		elves []int
+		elf   []int
 	)
 	for scanner.Scan() {
 		line := scanner.Text()
-		if len(line) == 0 {
-			sums, sum = append(sums, sum), 0
+		if len(line) < 1 {
+			elves, elf = append(elves, lo.Sum(elf)), nil
 			continue
 		}
-		sum += lo.Must(strconv.Atoi(line))
+		elf = append(elf, lo.Must(strconv.Atoi(line)))
 	}
 
-	lo.Must0(scanner.Err())
+	sort.Sort(sort.Reverse(sort.IntSlice(elves)))
 
-	sort.Sort(sort.Reverse(sort.IntSlice(sums)))
-	fmt.Printf("Part One: %d\n", sums[0])
-	fmt.Printf("Part Two: %d\n", lo.Sum(sums[:3]))
+	fmt.Printf("Part One: %d\n", elves[0])
+	fmt.Printf("Part Two: %d\n", lo.Sum(elves[:3]))
 }
