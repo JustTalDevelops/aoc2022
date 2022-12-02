@@ -29,6 +29,8 @@ func main() {
 		elf = append(elf, lo.Must(strconv.Atoi(line)))
 	}
 
+	lo.Must0(scanner.Err())
+
 	sort.Sort(sort.Reverse(sort.IntSlice(elves)))
 
 	fmt.Printf("Part One: %d\n", elves[0])
