@@ -6,17 +6,12 @@ import (
 	"os"
 )
 
-const (
-	startOfPacketMarkerLen  = 4
-	startOfMessageMarkerLen = 14
-)
-
 // main solves problems one and two for Advent of Code (Day Six).
 func main() {
 	input := []rune(string(lo.Must(os.ReadFile("input.txt"))))
 
-	fmt.Printf("Part One: %d\n", indexOfUniqueSelection(input, startOfPacketMarkerLen))
-	fmt.Printf("Part Two: %d\n", indexOfUniqueSelection(input, startOfMessageMarkerLen))
+	fmt.Printf("Part One: %d\n", indexOfUniqueSelection(input, 4))
+	fmt.Printf("Part Two: %d\n", indexOfUniqueSelection(input, 14))
 }
 
 // indexOfUniqueSelection returns the index of the first unique selection of runes based on the given length.
