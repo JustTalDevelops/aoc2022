@@ -11,7 +11,7 @@ const (
 	startOfMessageMarkerLen = 14
 )
 
-// main solves problems one and two for Advent of Code (Day Five).
+// main solves problems one and two for Advent of Code (Day Six).
 func main() {
 	input := []rune(string(lo.Must(os.ReadFile("input.txt"))))
 
